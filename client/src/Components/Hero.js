@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -9,12 +8,12 @@ import {
 } from "@material-tailwind/react";
 
 import imgUrl from '../assets/lost-and-found.png';
-import lostUrl from '../assets/lost-card.png';
-import { useNavigate } from "react-router-dom";
-import foundUrl from '../assets/found-card.png';
+import lostUrl from '../assets/lost-image.png';
+
+import foundUrl from '../assets/found-image.png';
 
 function Hero() {
-  const Nagivate = useNavigate();
+  
   return (
     
       <div >
@@ -30,7 +29,7 @@ function Hero() {
 
         
         <div >
-          <img alt="Front Photo" src={imgUrl} className=' min-w-[450px] min-h-[450px] 2xl:w-[1000px] 2xl:h-[1000px] max-w-[650px] max-h-[650px]'  ></img>
+          <img alt="Hero" src={imgUrl} className=' min-w-[450px] min-h-[450px] 2xl:w-[1000px] 2xl:h-[1000px] max-w-[650px] max-h-[650px]'  ></img>
         </div>
         
       </div>
@@ -57,8 +56,9 @@ function Hero() {
             className="m-0 w-[50%] shrink-0  rounded-r-none"
           >
             <img
+            
               src={lostUrl}
-              alt="card-image"
+              alt="lost"
               className="h-full w-full object-cover"
             />
           </CardHeader>
@@ -169,7 +169,7 @@ function Hero() {
           >
             <img
               src={foundUrl}
-              alt="card-image"
+              alt="Found"
               className="h-full w-full object-cover"
             />
           </CardHeader>

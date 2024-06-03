@@ -178,8 +178,7 @@ const Found = () => {
                       <Button size="sm" type="button"
                         className="hover:bg-orange-600"
                         data-bs-toggle="modal"
-                        data-bs-target={`#exampleModalGlobalLost${index}`}>
-                        View Details
+                        data-bs-target={`#exampleModalGlobalFound${index}`}>View Detail
                       </Button>
                       
                       {admin ? (
