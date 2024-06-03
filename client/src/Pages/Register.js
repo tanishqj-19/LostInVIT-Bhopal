@@ -164,7 +164,7 @@ return (
     <div className='sm:w-1/2 px-12 py-10'>
       <h2 className='font-bold text-3xl text-center text-[#002D74] '> Sign Up</h2>
 
-      <form  className='mt-4 flex flex-col gap-6 ' to={handleRegister} >
+      <form  className='mt-4 flex flex-col gap-6 '  >
       
         <div className='flex justify-between items-center gap-4'>
           <input placeholder='First Name' name="fname"

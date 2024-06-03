@@ -1,154 +1,219 @@
 import React, { Fragment } from "react";
-import styled from "styled-components";
-import { Timeline, Event } from "./TimeLine/Timeline";
 
-import imgUrl from '../assets/front_page.jpg';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+
+import imgUrl from '../assets/lost-and-found.png';
+import lostUrl from '../assets/lost-card.png';
+import { useNavigate } from "react-router-dom";
+import foundUrl from '../assets/found-card.png';
 
 function Hero() {
+  const Nagivate = useNavigate();
   return (
-    <PictureStyle>
-      <div>
-        {/* <div className="top-heading d-flex flex-column align-items-center">
-          <h1 className="slogan-container">
-            LOST ON CAMPUS <br /> FOUND ONLINE:
-            <br /> BRINGING BELONGINGS
-            <br /> BACK TO YOU
-          </h1>
-          <div className="d-flex flex-row justify-content-center align-items-center">
-            <Link to="/lost" className="btn btn-primary mx-3 py-2 px-3">
-              Lost Something?
-            </Link>
-            <Link to="/found" className="btn btn-primary mx-3 py-2">
-              Found Something?
-            </Link>
-          </div>
-        </div> */}
-        <div className='flex flex-col  md:flex-row md:justify-center items-center mt-0'>
+    
+      <div >
+       
+        <div className='flex flex-col  md:flex-row md:justify-center items-center '>
         <div className='flex flex-col md:w-2/5 justify-between pl-6 mt-0'>
-            <p className=' text-xl md:text-5xl 2xl:text-6xl font-bold   bg-clip-text text-transparent leading-relaxed bg-gradient-to-r from-blue-600 to-cyan-500 '>
-             Where Lost Meets Found: <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-500">VIT Bhopal </span> Edition
+            <p className=' text-xl md:text-5xl 2xl:text-6xl font-bold  bg-clip-text text-transparent bg-gradient-to-r from-light-blue-500 to-light-blue-700  '>
+             Where Lost Meets Found: <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-blue-500 ">VIT Bhopal </span> Edition
             </p>
             <p className='text-md md:text-xl 2xl:text-2xl font-sans mt-4'>Welcome to LostInVIT, where the lost become found with 
             simplicity and speed. Rediscover the ease of reclaiming what's yours in just a few clicks!</p>
         </div>
 
+        
         <div >
-        <div >
-          <img alt="Front Photo" src={imgUrl} className=' min-w-[500px] min-h-[500px] 2xl:w-[1000px] 2xl:h-[1000px] w-[650px] h-[650px]'  ></img>
+          <img alt="Front Photo" src={imgUrl} className=' min-w-[450px] min-h-[450px] 2xl:w-[1000px] 2xl:h-[1000px] max-w-[650px] max-h-[650px]'  ></img>
         </div>
-        </div>
+        
       </div>
-        <div className="bg-white content">
-          <div className="container">
-            <div className="row justify-content-between lost-item-content">
-              <div className="col-12 col-md-6 my-2">
-                <h2>Lost an Item?</h2>
-                <Fragment>
-                  <Timeline>
-                    <Event interval={"Step 1"} title={"Search For Lost Item"}>
-                      First, check the "Found" section for your lost item.
-                      Others may have posted items they found but don't own.
-                      Start by searching there.
-                    </Event>
-                    <Event interval={"Step 2"} title={"Create Post"}>
-                      If your lost item isn't in the "Found" section, it hasn't
-                      been found yet. Head to your profile and create a post in
-                      the "Lost Item" tab.
-                    </Event>
-                    <Event interval={"Step 3"} title={"Wait For Response"}>
-                      Now, all that's left to do is wait. If someone finds your
-                      item, they may come to the website, locate your post in
-                      the "Lost" section, and contact you through your email.
-                    </Event>
-                    <Event interval={"Step 4"} title={"Delete Post"}>
-                      Once you retrieve your lost item, please return to the
-                      website and delete the "Lost Item" post you created. This
-                      ensures that others won't be misled by outdated
-                      information.
-                    </Event>
-                  </Timeline>
-                </Fragment>
+        
+
+        
+        <div className="flex  justify-between flex-col items-center pt-5 ">
+
+          <div className="text-center text-black mb-5 pt-3">
+            <h2 className="text-light-blue-500 font-bold text-3xl leading-relaxed ">
+              OUR SERVICES
+              <div className="text-black text-xl ">
+                <hr />
               </div>
-              <div className="col-12 col-md-6 my-2">
-                <h2>Found an Item?</h2>
-                <Fragment>
-                  <Timeline>
-                    <Event interval={"Step 1"} title={"Search For Found Item"}>
-                      First, check the 'Lost' section for the item you found.
-                      Others may have posted items they lost but can't find.
-                      Start by searching there.
-                    </Event>
-                    <Event interval={"Step 2"} title={"Create Post"}>
-                      If the item you found isn't in the "Lost" section. Head to
-                      your profile and create a post in the "Found Item" tab.
-                    </Event>
-                    <Event interval={"Step 3"} title={"Wait For Response"}>
-                      Now, all that's left to do is wait. If someone is looking
-                      for their item, they may come to the website, locate your
-                      post in the 'Found' section, and contact you through your
-                      email.
-                    </Event>
-                    <Event interval={"Step 4"} title={"Delete Post"}>
-                      Once you have returned the item you found, please return
-                      to the website and delete the "Found Item" post you
-                      created. This ensures that others won't be misled by
-                      outdated information.
-                    </Event>
-                  </Timeline>
-                </Fragment>
-              </div>
+            </h2>
+          </div>
+
+         
+        
+        <Card className="w-full max-w-[80%] flex-row">
+          <CardHeader
+            shadow={false}
+            floated={false}
+            className="m-0 w-[50%] shrink-0  rounded-r-none"
+          >
+            <img
+              src={lostUrl}
+              alt="card-image"
+              className="h-full w-full object-cover"
+            />
+          </CardHeader>
+          <CardBody className="bg-light-blue-100  rounded-md rounded-l-none">
+            <Typography variant="h4" color="black" className="mb-4 uppercase"> 
+              Lost an Item?
+            </Typography>
+            
+            <Typography color="blue-gray-500" className="mb-8 font-normal">
+            <p >
+                <ol className="list-decimal pl-6 space-y-4">
+                <li className="flex items-start  text-blue-gray-500 text-xl   font-semibold">
+                  <span className="text-black mr-2 ">&#8226;</span>
+                  <p>Check the "Found" section first.</p>
+                </li>
+                <li className="flex items-start text-blue-gray-500 text-xl  font-semibold">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>Create a post in the "Lost Item" tab if your item isn't there.</p>
+                </li>
+                <li className="flex items-start text-blue-gray-500 text-xl font-semibold">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>Be patient, someone may find your item and contact you.</p>
+                </li>
+                <li className="flex items-start text-xl text-blue-gray-500 font-semibold">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>Once you retrieve your item, delete the post to avoid confusion.</p>
+                </li>
+              </ol>
+            </p>
+            </Typography>
+            <a href="/lost" className="inline-block">
+              <Button variant="text" className="flex items-center gap-2">
+                Learn More
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  className="h-4 w-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </Button>
+            </a>
+          </CardBody>
+        </Card>
+
+
+        <Card className="w-full max-w-[80%] flex-row mt-16">
+          
+          <CardBody className="bg-light-blue-100  rounded-md rounded-r-none">
+            <Typography variant="h4" color="black" className="mb-4 uppercase"> 
+              Found an Item?
+            </Typography>
+            
+            <Typography color="blue-gray-500" className="mb-8 font-normal">
+            <p >
+                <ol className="list-decimal pl-6 space-y-4">
+                <li className="flex items-start  text-blue-gray-500 text-xl   font-semibold">
+                  <span className="text-black mr-2 ">&#8226;</span>
+                  <p>Check the "Lost" section first.</p>
+                </li>
+                <li className="flex items-start text-blue-gray-500 text-xl  font-semibold">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>If the item isn't listed, go to your profile and create a post under the 'Found Item' tab.</p>
+                </li>
+                <li className="flex items-start text-blue-gray-500 text-xl font-semibold">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>Wait for the item's owner to contact you.</p>
+                </li>
+                <li className="flex items-start text-xl text-blue-gray-500 font-semibold">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>Once the item is returned, delete your 'Found Item' post to keep the information current.</p>
+                </li>
+              </ol>
+            </p>
+            </Typography>
+            <a href="/found" className="inline-block">
+              <Button variant="text" className="flex items-center gap-2">
+                Learn More
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  className="h-4 w-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </Button>
+            </a>
+          </CardBody>
+
+          <CardHeader
+            shadow={false}
+            floated={false}
+            className="m-0 w-[50%] shrink-0  rounded-md rounded-l-none "
+          >
+            <img
+              src={foundUrl}
+              alt="card-image"
+              className="h-full w-full object-cover"
+            />
+          </CardHeader>
+        </Card>
+
+        {/* <div className="card lg:card-side bg-neurtal shadow-xl max-w-[80%] mt-16 mb-8">
+          <figure className="w-[50%]"><img src={foundUrl}  alt="Album"/></figure>
+          <div className="card-body">
+            <h2 className="card-title font-bold text-2xl">Found an Item ?</h2>
+            <p>
+                <ol className="list-decimal pl-6 space-y-4">
+                <li className="flex items-start text-xl  text-gray-600 font-[500]">
+                  <span className="text-black mr-2 ">&#8226;</span>
+                  <p>Look in the 'Lost' section to see if someone has already reported the item you found.</p>
+                </li>
+                <li className="flex items-start text-xl text-gray-600 font-[500]">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>If the item isn't listed, go to your profile and create a post under the 'Found Item' tab.</p>
+                </li>
+                <li className="flex items-start text-xl text-gray-600 font-[500]">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>Wait for the item's owner to contact you via email after they see your post in the 'Found' section.</p>
+                </li>
+                <li className="flex items-start text-xl text-gray-600 font-[500]">
+                  <span className="text-black mr-2">&#8226;</span>
+                  <p>Once the item is returned, delete your 'Found Item' post to keep the information current.</p>
+                </li>
+              </ol>
+            </p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary bg-blue-500 border-blue-500 text-white" onClick={()=>{Nagivate('/found')}}>Found Something?</button>
             </div>
           </div>
+        </div> */}
+
+
+
+          {/* New Page enddddd */}
         </div>
       </div>
-    </PictureStyle>
+   
   );
 }
 
-const PictureStyle = styled.section`
-  h1 {
-    font-size: 3.5em;
-    font-weight: 600;
-  }
 
-  .content {
-    padding: 2rem 0 !important;
-  }
-
-  .top-heading {
-    margin: 2rem 0 5rem 0;
-  }
-
-  .slogan-container {
-    text-align: center !important;
-    margin: 2rem 0px 2rem 0px;
-    color: #35363a;
-  }
-
-  .content-container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .directions-container {
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 1.5em;
-      font-weight: 600;
-    }
-
-    .top-heading {
-      margin: 1rem 0 3rem 0;
-    }
-
-    .btn {
-      font-size: 0.8rem;
-    }
-  }
-`;
 
 export default Hero;

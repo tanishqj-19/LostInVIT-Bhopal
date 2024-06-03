@@ -5,6 +5,8 @@ import {
   deleteLostPost,
 } from "../Services/Apis";
 import moment from "moment";
+import { Input , Button} from "@material-tailwind/react";
+
 
 const Lost = () => {
   const [search, setSearch] = useState("");
@@ -80,29 +82,37 @@ const Lost = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="text-center">Lost Items</h1>
-      <div className="my-2 d-flex justify-content-between align-items-center">
+    <div className="container mt-0 bg-neutral-100 h-screen mb-0">
+          <div className="flex flex-row text-center justify-center text-black mb-4 pt-3">
+            <h2 className="text-indigo-700  font-bold text-3xl leading-relaxed ">
+            LOST ITEMS
+              <div className="text-black text-xl ">
+                <hr />
+              </div>
+            </h2>
+          </div>
+      
+      <div className="my-2 flex justify-between items-center">
         <select
           id="exampleFormControlSelect"
           aria-label="Select Day Scholar or Hosteller"
           name="sortingorder"
-          className="text-muted"
-          style={{ padding: "6px 8px" }}
+          className="text-muted px-[8px] py-[6px]  border-[#e5e7eb] border-2 rounded outline-none  cursor-pointer "
+          
           onChange={(e) => setOrder(e.target.value)}
         >
           <option value="Old">Oldest First</option>
           <option value="New">Newest First</option>
         </select>
-        <input
-          type="text"
-          className="mx-2"
-          name="search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search By Title"
-          style={{ padding: "6px 5px", width: "150px" }}
-        />
+        <div className="w-72 outline-none">
+          <Input label="Search By title" icon={<i className="fas fa-search" />} 
+            name="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            
+           />
+        </div>
+        
       </div>
       <div className="row" style={{ margin: "auto" }}>
         {spinner ? (
@@ -121,9 +131,9 @@ const Lost = () => {
             .map((element, index) => (
               <>
                 <div
-                  className="card mx-3 mt-3"
+                  className="card mx-2 mt-3"
                   key={index}
-                  style={{ width: "18rem", height: "28rem" }}
+                  style={{ width: "18rem", height: "30rem" }}
                 >
                   <div className="profileImg my-2 d-flex justify-content-start align-items-center">
                     <img
@@ -164,26 +174,21 @@ const Lost = () => {
                     <p className="card-text">
                       {truncateDescription(element.description, 50)}
                     </p>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <button
-                        className="btn btn-outline-primary"
-                        style={{ fontSize: "14px" }}
-                        type="button"
+                    <div className="flex  justify-between items-center gap-4">
+                      <Button size="sm" type="button"
+                        className="hover:bg-orange-600"
                         data-bs-toggle="modal"
-                        data-bs-target={`#exampleModalGlobalLost${index}`}
-                      >
+                        data-bs-target={`#exampleModalGlobalLost${index}`}>
                         View Details
-                      </button>
+                      </Button>
+                      
                       {admin ? (
-                        <button
-                          className="btn px-4 btn-outline-danger"
-                          style={{ fontSize: "14px" }}
-                          onClick={() => handleDeletePost(element._id)}
-                        >
-                          Delete
-                        </button>
-                      ) : null}
+                        <Button className="bg-red-500 hover:bg-red-800 " size="sm" onClick={() => handleDeletePost(element._id)}>Delete</Button>
+                      ) : null }
+                      
+                      
                     </div>
+                    
                   </div>
                 </div>
                 <div

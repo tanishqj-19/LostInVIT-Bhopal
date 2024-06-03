@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import {
   MDBCol,
   MDBContainer,
@@ -22,8 +23,10 @@ import {
   userData,
   userProfileUpdate,
 } from "../Services/Apis";
+import { Button } from "@material-tailwind/react";
 import Lost from "../Components/Lost";
 import Found from "../Components/Found";
+
 
 export default function ProfilePage() {
   const [data, setData] = useState({});
@@ -184,13 +187,14 @@ export default function ProfilePage() {
       <MDBContainer className="py-3">
         <MDBRow>
           <MDBCol lg="4">
-            <MDBCard className="mb-4">
+            <MDBCard className="mb-4 shadow-none">
               <MDBCardBody className="text-center">
                 {normalSpinner ? (
-                  <div className="spinner-border" role="status">
+                  <div className="spinner-border px-2" role="status">
                     <span className="sr-only"></span>
                   </div>
                 ) : (
+                  <div className="flex justify-center">
                   <MDBCardImage
                     src={
                       data.profileImgPath
@@ -206,25 +210,31 @@ export default function ProfilePage() {
                     }}
                     fluid
                   />
+                  </div>
                 )}
-                <p className="text-muted mb-1">Hello {data.fname}</p>
-                <div className="d-flex justify-content-center mb-2">
-                  <button
+                <p className=" mt-2 mb-2 text-black font-semibold">{data.fname + " " + data.lname}</p>
+                <div className="flex justify-center mt-2">
+                  <Button
+                  size="sm"
                     type="button"
-                    className="btn btn-primary px-4"
+                    className="px-4 mx-1 bg-gray-300 text-black "
+                    varient="gradient"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
+                    color="bg-gray-300"
                   >
                     Edit Profile
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     type="button"
-                    className="btn btn-outline-primary mx-2"
+                    size="sm"
+                    varient="gradient"
+                    className="bg-gray-300 text-black mx-1"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal222"
                   >
                     Edit Credential
-                  </button>
+                  </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -238,7 +248,7 @@ export default function ProfilePage() {
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">
-                      {data.fname}
+                      {data.fname + " " + data.lname}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -287,8 +297,8 @@ export default function ProfilePage() {
             onClick={() => handleIconsClick("tab1")}
             active={iconsActive === "tab1"}
           >
-            <MDBIcon className="me-2" />
-            Lost Items
+            <MDBIcon className="me-2 text-black font-semibold" />
+            Lost Items 
           </MDBTabsLink>
         </MDBTabsItem>
         <MDBTabsItem>
@@ -297,7 +307,7 @@ export default function ProfilePage() {
             onClick={() => handleIconsClick("tab2")}
             active={iconsActive === "tab2"}
           >
-            <MDBIcon className="me-2" />
+            <MDBIcon className="me-2 font-semibold" />
             Found Items
           </MDBTabsLink>
         </MDBTabsItem>
@@ -322,7 +332,7 @@ export default function ProfilePage() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
+              <h5 className="modal-title text-black" id="exampleModalLabel">
                 Edit Profile Picture
               </h5>
               <button
@@ -352,29 +362,30 @@ export default function ProfilePage() {
             </div>
             <div className="modal-footer">
               {data.profileImgPath ? (
-                <button
-                  className="btn btn-outline-danger"
+                <Button
+                  size="md"
+                  className="rounded-xl bg-red-700"
                   onClick={handleRemoveProfilePicClick}
                 >
                   Remove Picture
-                </button>
+                </Button>
               ) : (
                 ""
               )}
-              <button
-                type="button"
-                className="btn btn-primary"
+              <Button
+                size="md"
+                className="text-black bg-gray-300 rounded-xl  "
                 onClick={handleUpdateClick}
               >
                 Save changes
                 {updateProfileSpiner ? (
-                  <div className="spinner-border" role="status">
+                  <div className="ml-2 spinner-border" role="status">
                     <span className="sr-only"></span>
                   </div>
                 ) : (
                   ""
                 )}
-              </button>
+              </Button>
             </div>
           </div>
         </div>

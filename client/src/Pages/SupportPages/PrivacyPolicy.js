@@ -3,157 +3,52 @@ import styled from "styled-components";
 
 function PrivacyPolicy() {
   return (
-    <PolicyStyle>
-      <div className="container my-3 mx-3">
-        <div className="main-heading m-5 text-center align-items-center">
-          Privacy Policy
+    <div className="px-6 lg:w-5/6 xl:w-4/6 py-10 mx-auto">
+      <div className="space-y-12 text-md md:text-lg text-gray-500 pb-4 md:pb-8">
+        <p>
+        Welcome to LostInVIT, the official Lost and Found platform for VIT Bhopal. 
+        </p>
+        <div className="space-y-2">
+          <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+            Information We Collect
+          </h2>
+          <p>
+          When you register and use LostInVIT, we collect personal information such as your name, email address, and VIT Bhopal registration number. Additionally, we collect details of items you report as lost or found, including descriptions, locations, and any photos you upload. We also gather information 
+          about how you use our site, including pages visited, time spent on the site, and other interaction details.
+          </p>
         </div>
-        <div className="p container">
-          <div>
-            <ul>
-              <li>
-                <h2>1. Information Collected</h2>
-                <ul>
-                  <li>
-                    <h3>
-                      1.1. The Website collects user-provided information during
-                      registration.
-                    </h3>
-                  </li>
-                  <li>
-                    <h3>
-                      1.2. Lost and Found item information posted by users is
-                      also stored.
-                    </h3>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h2>2. Use of Information</h2>
-                <ul>
-                  <li>
-                    <h3>
-                      2.1. User information is used for account management and
-                      communication.
-                    </h3>
-                  </li>
-                  <li>
-                    <h3>
-                      2.2. Lost and Found item information is displayed on the
-                      respective pages.
-                    </h3>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h2>3. Sharing of Information</h2>
-                <ul>
-                  <li>
-                    <h3>
-                      3.1. User information is not shared with third parties
-                      without consent.
-                    </h3>
-                  </li>
-                  <li>
-                    <h3>
-                      3.2. Found item information may be shared with the
-                      claimant.
-                    </h3>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h2>4. Security</h2>
-                <ul>
-                  <li>
-                    <h3>
-                      4.1. The Website employs security measures to protect user
-                      information.
-                    </h3>
-                  </li>
-                  <li>
-                    <h3>
-                      4.2. Users are responsible for maintaining the security of
-                      their login credentials.
-                    </h3>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h2>5. Cookies</h2>
-                The Website may use cookies to enhance user experience.
-              </li>
-              <li>
-                <h2>6. Changes to Privacy Policy</h2>
-                The Privacy Policy may be updated without notice. Users are
-                advised to review it regularly.
-              </li>
-            </ul>
-          </div>
+
+        <div className="space-y-2">
+          <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+          How We Use Your Information
+
+          </h2>
+          <p>
+          We use your information to facilitate the reporting and retrieval of lost and found items. 
+          To contact you regarding your lost or found item reports and to send you updates and notifications related to our service. We analyze usage data to improve our platform's functionality and user experience. We also use your information to protect against 
+          unauthorized access and ensure the security of our platform.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <h2 className="text-xl md:text-2xl font-medium text-gr-700">
+          Data Sharing and Disclosure
+          </h2>
+          <p>
+          Information about lost or found items you report will be visible to other users of the platform to facilitate the return of items. We may share your information with third-party service providers who assist us in operating the platform. Additionally, we may disclose
+          your information if required by law or in response to valid requests by public authorities.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+          Data Security
+          </h2>
+          <p>
+          We implement various security measures to protect your personal information from unauthorized access, use, or disclosure. However, no internet-based platform can be 100% secure, so we cannot guarantee absolute security.
+          </p>
         </div>
       </div>
-    </PolicyStyle>
-  );
-}
-
-const PolicyStyle = styled.section`
-  p {
-    font-size: 1.1rem;
-    letter-spacing: 0.9px;
-    line-height: 1.5rem;
-  }
-
-  .main-heading {
-    display: inline;
-    margin-top: 1rem !important;
-    font-size: 2rem;
-    font-weight: 400 !important;
-    border-bottom: 3px solid #0d6efd;
-    margin-left: 38rem !important;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    padding-left: 15px;
-    padding-top: 20px;
-  }
-
-  li {
-    margin-bottom: 1rem;
-    overflow-wrap: break-word;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-    color: #0d6efd;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-    color: #0d6efd;
-    padding-left: 24px;
-    color: #333;
-  }
-
-  /* Media Queries for Responsive Design */
-  @media (max-width: 767px) {
-    .main-heading {
-      margin-left: 69px !important;
-      text-align: center;
-      font-size: 1.4rem;
-    }
-
-    h2 {
-      padding-left: 0px;
-      margin-left: -30px;
-      font-size: 1.2rem;
-    }
-    h3 {
-      padding-right: 10px;
-      font-size: 1rem;
-    }
-  }
-`;
-
+    </div>
+  )};
 export default PrivacyPolicy;

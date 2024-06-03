@@ -6,6 +6,7 @@ import {
   userData,
 } from "../Services/Apis";
 import moment from "moment";
+import { Button } from "@material-tailwind/react";
 
 const Found = () => {
   const [spinner, setSpinner] = useState(false);
@@ -130,14 +131,14 @@ const Found = () => {
 
   return (
     <>
-      <button
+      <Button
         type="button"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalFound3"
-        className="btn btn-outline-primary my-2"
+        className="rounded-lx my-2"
       >
         Create Post
-      </button>
+      </Button>
       <div className="row mt-2" style={{ margin: "auto" }}>
         {spinner ? (
           <>
@@ -154,7 +155,7 @@ const Found = () => {
               <div
                 className="card mx-3 mt-3"
                 key={index}
-                style={{ width: "18rem", height: "28rem" }}
+                style={{ width: "18rem", height: "30rem" }}
               >
                 <div className="profileImg my-2 d-flex justify-content-start align-items-center">
                   <img
@@ -193,24 +194,22 @@ const Found = () => {
                   <p className="card-text">
                     {truncateDescription(element.description, 50)}
                   </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <button
-                      className="btn btn-outline-primary"
-                      style={{ fontSize: "14px" }}
-                      type="button"
-                      data-bs-toggle="modal"
-                      data-bs-target={`#exampleModalFound${index}`}
-                    >
-                      View Details
-                    </button>
-                    <button
-                      className="btn px-4 btn-outline-danger"
-                      style={{ fontSize: "14px" }}
-                      onClick={() => handleDeletePost(element._id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
+                  <div className="flex  justify-between items-center gap-4">
+                      <Button size="sm" type="button"
+                        className="hover:bg-orange-600"
+                        data-bs-toggle="modal"
+                        data-bs-target={`#exampleModalGlobalLost${index}`}>
+                        View Details
+                      </Button>
+                      
+                      
+                        <Button className="bg-red-500 hover:bg-red-800"
+                        size="sm" onClick={() => handleDeletePost(element._id)}>Delete</Button>
+                      
+                      
+                      
+                    </div>
+                  
                 </div>
               </div>
               <div

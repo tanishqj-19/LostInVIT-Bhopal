@@ -27,43 +27,43 @@ exports.userregister = async (req, res) => {
   }
 
   try {
-    // console.log(fname);
-    // console.log(lname)
-    // console.log(email);
-    // console.log(regNo);
-    // console.log(hostelOrDayScholar);
-    // console.log(password);
-    
+    checkEmail = email;
+    const preUser = await users.findOne({ email: checkEmail });
 
-    
-    const preUser = await users.findOne({ regNo: regNo});
-   
     if (preUser) {
-      
-      res.status(400).json({ error: "This User Already Exist" });
+      res.status(400).json({ error: "This User Allready Exist" });
     } else {
-      
-      const userregister1 = new users({
-        fname,
-        lname,
-        regNo,
-        email,
-        hostelOrDayScholar,
-        password,
-        isAdmin: isAdmin || false,
-        isBlocked: isBlocked || false,
+
+      let x = false;
+      if(isAdmin) x = true;
+      const newEntry =  new users({
+        fname : fname,
+        lname: lname,
+        regNo : regNo,
+        email: email,
+        hostelOrDayScholar: hostelOrDayScholar,
+        password: password,
+        isAdmin: x,
+        isBlocked: false,
       });
       
-
       // here password hasing
-      const storeData = await userregister1.save();
-    
-      res.status(200).json(storeData);
+      
+      console.log(newEntry.regNo);
+      try {
+        const storeData = await newEntry.save();
+        return res.status(200).json(storeData);
+      } catch (saveError) {
+        console.error("Error saving user:", saveError);
+        return res.status(500).json({ error: "Failed to save user", details: saveError.message });
+      }
     }
   } catch (error) {
     res.status(400).json({ error: "Invalid Details", error });
   }
 };
+
+
 
 // user login
 exports.userLogin = async (req, res) => {

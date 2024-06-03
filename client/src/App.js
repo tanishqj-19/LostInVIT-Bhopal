@@ -12,7 +12,7 @@ import ScrollTop from "./Components/ScrollToTop/ScrollTop";
 import BackToTop from "./Components/ScrollToTop/ScrollButton";
 import Terms from "./Pages/SupportPages/Terms";
 import PrivacyPolicy from "./Pages/SupportPages/PrivacyPolicy";
-import Faq from "./Pages/SupportPages/Faq";
+
 import { useEffect, useState } from "react";
 import { userData } from "./Services/Apis";
 import Users from "./Pages/Users";
@@ -73,7 +73,7 @@ function App() {
             path="/privacypolicy"
             element={isLoggedIn ? <PrivacyPolicy /> : <Login />}
           />
-          <Route path="/faq" element={isLoggedIn ? <Faq /> : <Login />} />
+          
         </Routes>
         {isLoggedIn ? <Footer /> : null}
         <BackToTop />
