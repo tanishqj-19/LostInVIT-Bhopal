@@ -8,9 +8,9 @@ import {
 } from "@material-tailwind/react";
 
 import imgUrl from '../assets/lost-and-found.png';
-import lostUrl from '../assets/lost-image.png';
+import lostUrl from '../assets/lost-card.svg';
 
-import foundUrl from '../assets/found-image.png';
+import foundUrl from '../assets/found-card.svg';
 
 function Hero() {
   
@@ -56,10 +56,10 @@ function Hero() {
             className="m-0 w-[50%] shrink-0  rounded-r-none"
           >
             <img
-            
+              
               src={lostUrl}
               alt="lost"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-fill"
             />
           </CardHeader>
           <CardBody className="bg-light-blue-100  rounded-md rounded-l-none">
