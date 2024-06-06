@@ -26,5 +26,9 @@ LostInVIT aims to create a more organized and supportive environment for everyon
 - **JWT Authentication:** Secure user authentication using JSON Web Tokens.
 
 
+## Live Demo
+
+Check out my project [here](https://lost-in-vit-bhopal.vercel.app/)
+
 
 
