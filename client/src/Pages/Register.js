@@ -164,7 +164,7 @@ return (
     <div className='sm:w-1/2 px-12 py-10'>
       <h2 className='font-bold text-3xl text-center text-[#002D74] '> Sign Up</h2>
 
-      <form  className='mt-4 flex flex-col gap-6 '  >
+      <form  className='mt-4 flex flex-col gap-4 '  >
       
         <div className='flex justify-between items-center gap-4'>
           <input placeholder='First Name' name="fname"
@@ -229,11 +229,11 @@ return (
             Register
         </button>
 
-        <div className='mt-4 grid grid-cols-3 items-center text-gray-400'>
+        {/* <div className='mt-4 grid grid-cols-3 items-center text-gray-400'>
           <hr className='border-gray-400'/>
           <p className='text-center text-sm'> OR </p>
           <hr className='border-gray-400'/>
-        </div>
+        </div> */}
 
         <div className='text-sm flex justify-between items-center gap-4'>
             <p>Already Have An Account? </p>
@@ -249,7 +249,7 @@ return (
       <div className='w-1/2  p-5 sm:block hidden'>
         <div >
           <img  src={imgUrl}  
-            className='rounded-2xl'
+            className='rounded-2xl mt-3'
             alt='Sign Up'/>
         </div>
         

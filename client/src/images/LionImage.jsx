@@ -4,7 +4,7 @@ const LionImage = () => {
   return (
     <div className=''>
         <img 
-            className='rounded-2xl '
+            className='rounded-xl mt-1 '
             src={imgUrl}
             alt = "Login Page"
         />

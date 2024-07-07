@@ -104,9 +104,9 @@ const Login = () => {
           </h2>
           <p className='text-sm mt-4'>If you already a member, easily log in</p>
           
-          <form action='/' className='flex flex-col gap-6'>
+          <form  className='flex flex-col gap-4'>
             <input
-              className='p-2 mt-8 rounded-xl border shadow w-full border-black/10 outline-0'
+              className='p-2 mt-6 rounded-xl border shadow w-full border-black/10 outline-0'
              placeholder='Registration No.' name='regNo'
              value={inputData.regNo} onChange={handleChange} />
 
@@ -127,10 +127,10 @@ const Login = () => {
             </div>
             
             <button className='bg-[#002D74] font-semibold hover:scale-110 duration-300 leading-relaxed
-             hover:bg-black rounded-2xl shadow-sm text-white py-2' onClick = {handleLogin}>
+             hover:bg-black rounded-xl shadow-md text-white py-2' onClick = {handleLogin}>
               Log in
               {spinner ? (
-              <div className="spinner-border" role="status">
+              <div className="spinner-border ml-2 h-3 w-3" role="status">
                 <span className="sr-only"></span>
                 </div>
                ) : (
@@ -139,18 +139,24 @@ const Login = () => {
               
             </button>
 
-            <div className='mt-4 grid grid-cols-3 items-center text-gray-400'>
-              <hr className='border-gray-400'/>
-              <p className='text-center text-sm'> OR </p>
-              <hr className='border-gray-400'/>
+            <div className='mt-2 grid grid-cols-3 items-start text-gray-600'>
+              <hr className='border-gray-600'/>
+              <p className='text-center my-1 text-sm'> OR </p>
+              <hr className='border-gray-600'/>
             </div>
 
-            <div className='text-sm flex justify-between items-center gap-4'>
-              <p>Don't Have An Account Yet? </p>
+            <div className='text-sm flex  mt-0 justify-between items-center gap-4'>
+              
               <Link to='/register' className='rounded-full
                 hover:scale-110 duration-300 
-               py-2 px-4 bg-black text-white'>Sign up</Link>
+               py-2 px-3 bg-black text-white'>Sign up</Link>
+
+              <button onClick={(e)=> {e.preventDefault(); setInputData({ regNo: "21BCE56789", password: 'testUser123'});}} className='rounded-full
+                hover:scale-110 duration-300 
+               py-2 px-3 bg-blue-900 text-white'>Test User</button>
             </div>
+
+           
             
           </form>
         </div>
